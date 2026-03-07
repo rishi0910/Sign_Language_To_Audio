@@ -1,0 +1,31 @@
+# SignBridge Pro — Python dependencies
+# Install with: pip install -r requirements.txt
+
+# Core
+opencv-python>=4.8.0
+mediapipe>=0.10.0
+numpy>=1.24.0
+Pillow>=10.0.0
+
+# AI model
+tensorflow>=2.13.0        # OR tensorflow-cpu for lighter installs
+# torch>=2.0.0            # Uncomment if using PyTorch-based model
+
+# TTS engines (at least one required)
+pyttsx3>=2.90             # Offline, default
+# gTTS>=2.3.2             # Online, good Hindi support
+# edge-tts>=6.1.0         # Online, high quality Microsoft voices
+# TTS>=0.22.0             # Coqui offline high-quality
+
+# UI extras
+# pystray>=0.19.0         # System tray icon (optional)
+# playsound>=1.3.0        # Needed for gTTS / edge-tts playback
+
+# OBS WebSocket (optional)
+# obs-websocket-py>=1.0.0
+
+# WebSocket server for website integration (optional)
+# websockets>=11.0.0
+
+# Packaging
+pyinstaller>=6.0.0

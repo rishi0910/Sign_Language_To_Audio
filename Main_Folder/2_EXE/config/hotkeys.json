@@ -1,0 +1,10 @@
+{
+  "start_translation": "F5",
+  "stop_translation":  "Escape",
+  "speak_now":         "Return",
+  "clear":             "Ctrl+N",
+  "save":              "Ctrl+S",
+  "copy":              "Ctrl+C",
+  "show_help":         "F1",
+  "toggle_overlay":    "Ctrl+Shift+O"
+}
