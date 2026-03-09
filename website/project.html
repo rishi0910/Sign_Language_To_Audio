@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | SignAI</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Common Navigation Bar -->
+    <nav>
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-hands-asl-interpreting text-gradient"></i> SignAI
+        </a>
+
+        <button class="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="project.html" class="active">Our Project Details</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <div class="page-header">
+            <h2>System <span class="text-gradient">Architecture & Details</span></h2>
+            <p>Comprehensive overview of our Computer Vision to Audio translation pipeline.</p>
+        </div>
+
+        <!-- Grid Layout for Project Sections -->
+        <div class="cards-grid">
+
+            <!-- Problem Statement -->
+            <div class="card">
+                <h3><i class="fa-solid fa-circle-exclamation"></i> Problem Statement</h3>
+                <p>Communication barriers exist between the speech/hearing-impaired community and the general public.
+                    Traditional sign language requires a trained interpreter, making real-time, independent
+                    communication difficult in everyday scenarios.</p>
+            </div>
+
+            <!-- Proposed Solution -->
+            <div class="card">
+                <h3><i class="fa-solid fa-lightbulb"></i> Proposed Solution</h3>
+                <p>We developed an AI-powered system that captures live video of sign language gestures, interprets the
+                    spatial features using deep learning, and instantly translates those gestures into spoken audio,
+                    bridging the communication gap autonomously.</p>
+            </div>
+
+            <!-- Technologies Used -->
+            <div class="card">
+                <h3><i class="fa-solid fa-microchip"></i> Technologies Used</h3>
+                <ul>
+                    <li><strong>Python</strong> (Core Logic)</li>
+                    <li><strong>OpenCV</strong> (Image capturing & processing)</li>
+                    <li><strong>TensorFlow & Keras</strong> (Deep Learning framework)</li>
+                    <li><strong>CNN (Convolutional Neural Networks)</strong> (Gesture classification)</li>
+                    <li><strong>MediaPipe</strong> (Hand landmark detection)</li>
+                    <li><strong>pyttsx3 / gTTS</strong> (Text-to-Speech conversion)</li>
+                </ul>
+            </div>
+
+            <!-- Future Scope -->
+            <div class="card">
+                <h3><i class="fa-solid fa-rocket"></i> Future Scope</h3>
+                <ul>
+                    <li>Support for dynamic gestures (video sequence analysis vs static frames).</li>
+                    <li>Multi-lingual audio output targeting regional languages.</li>
+                    <li>Mobile application portability (Android/iOS).</li>
+                    <li>Two-way communication (Speech-to-Sign Avatar integration).</li>
+                </ul>
+            </div>
+
+            <!-- Team Members Area -->
+            <div class="card" style="grid-column: 1 / -1; margin-bottom: 2rem;">
+                <h3><i class="fa-solid fa-users"></i> Our Team</h3>
+                <p style="margin-bottom: 1.5rem;">The dedicated team behind the SignAI project.</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+
+                    <div class="arch-node" style="border-color: var(--primary-color);">
+                        <i class="fa-solid fa-laptop-code"
+                            style="font-size: 1.5rem; color: var(--accent-color); margin-bottom: 10px;"></i>
+                        <h4 style="margin-bottom: 5px; color: var(--text-main);">Apoorv</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">EXE & System Integration
+                            Lead</p>
+                    </div>
+
+                    <div class="arch-node" style="border-color: var(--secondary-color);">
+                        <i class="fa-solid fa-brain"
+                            style="font-size: 1.5rem; color: var(--secondary-color); margin-bottom: 10px;"></i>
+                        <h4 style="margin-bottom: 5px; color: var(--text-main);">Rishi</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Machine Learning Lead</p>
+                    </div>
+
+                    <div class="arch-node" style="border-color: var(--primary-color);">
+                        <i class="fa-solid fa-object-group"
+                            style="font-size: 1.5rem; color: var(--primary-color); margin-bottom: 10px;"></i>
+                        <h4 style="margin-bottom: 5px; color: var(--text-main);">Meenakshi</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">UI/UX & Web Lead</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div> <!-- End of standard cards -->
+
+        <!-- System Architecture (Full width visual box) -->
+        <div class="card" style="margin-bottom: 4rem;">
+            <h3><i class="fa-solid fa-diagram-project"></i> System Architecture</h3>
+            <p style="text-align: center; margin-bottom: 1.5rem;">Visual flow of data from camera input to output
+                endpoints.</p>
+
+            <div class="architecture-box">
+                <!-- Group 1: Camera & Hand Tracking -->
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <div class="arch-node" style="min-width: 180px;">
+                        <i class="fa-solid fa-camera" style="margin-bottom: 5px; color: var(--accent-color);"></i><br>
+                        Camera Input
+                    </div>
+                    <div class="arch-arrow" style="align-self: center; transform: rotate(270deg);"><i
+                            class="fa-solid fa-arrow-down"></i></div>
+                    <div class="arch-node" style="min-width: 180px;">
+                        <i class="fa-solid fa-hand" style="margin-bottom: 5px; color: #4ade80;"></i><br>
+                        Hand Landmark<br>Detection
+                    </div>
+                </div>
+
+                <div class="arch-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+
+                <!-- Group 2: Gesture Processing -->
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <div class="arch-node" style="min-width: 180px; border-color: #facc15;">
+                        <i class="fa-solid fa-hands" style="margin-bottom: 5px; color: #facc15;"></i><br>
+                        Gesture Recognition
+                    </div>
+                    <div class="arch-arrow" style="align-self: center; transform: rotate(270deg);"><i
+                            class="fa-solid fa-arrow-down"></i></div>
+                    <div class="arch-node" style="min-width: 180px; border-color: var(--secondary-color);">
+                        <i class="fa-solid fa-font" style="margin-bottom: 5px; color: var(--secondary-color);"></i><br>
+                        Character & Custom<br>Gesture Classification
+                    </div>
+                </div>
+
+                <div class="arch-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+
+                <!-- Group 3: Text to Sentence/Output -->
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative;">
+                    <div class="arch-node"
+                        style="min-width: 180px; background: rgba(255,255,255,0.1); border-color: #cbd5e1;">
+                        <i class="fa-solid fa-keyboard" style="margin-bottom: 5px;"></i><br>
+                        Word & Sentence<br>Formation
+                    </div>
+
+                    <!-- Text to Speech Branch -->
+                    <div class="arch-arrow" style="align-self: center; transform: rotate(270deg);"><i
+                            class="fa-solid fa-arrow-down"></i></div>
+
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="arch-node" style="min-width: 150px; border-color: #f97316;">
+                            Text-to-Speech<br>Conversion
+                        </div>
+                        <div class="arch-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+                        <div class="arch-node"
+                            style="min-width: 150px; border-color: #fbbf24; background: rgba(251, 191, 36, 0.1);">
+                            <i class="fa-solid fa-volume-high"></i> Audio Output
+                        </div>
+                    </div>
+
+                    <!-- Video Platform Branch -->
+                    <div class="arch-arrow" style="align-self: center; transform: rotate(270deg);"><i
+                            class="fa-solid fa-arrow-down"></i></div>
+
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="arch-node"
+                            style="min-width: 180px; border-color: #ef4444; background: rgba(239, 68, 68, 0.1);">
+                            <i class="fa-solid fa-video"></i> Video Conferencing<br>Platforms (via OBS)
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Professional Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SignAI Team. Final Year Project.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
