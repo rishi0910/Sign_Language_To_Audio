@@ -1,21 +1,43 @@
-/* Modern AI Startup Theme: Blue & Purple Gradients */
+/* Highly Accessible Simple Light Theme for Low Vision */
 :root {
-  --primary-color: #4A90E2;      /* Bright Blue */
-  --secondary-color: #9013FE;    /* Deep Purple */
-  --accent-color: #00E5FF;       /* Cyan */
-  --bg-dark: #0B0E14;            /* Very dark navy/black */
-  --bg-card: rgba(255, 255, 255, 0.05); /* Glassmorphism background */
-  --text-main: #FFFFFF;
-  --text-muted: #A0AEC0;
+  --primary-color: #1A73E8;      /* Strong, accessible blue instead of yellow */
+  --secondary-color: #0D47A1;    
+  --accent-color: #188038;       /* High contrast green */
+  --bg-dark: #F8F9FA;            /* Clean light background */
+  --bg-card: #FFFFFF;            /* Solid white cards */
+  --text-main: #202124;          /* High contrast almost black */
+  --text-muted: #5F6368;         /* Accessible dark gray */
+  --border-color: #DADCE0;
   --font-main: 'Inter', sans-serif;
-  --gradient-btn: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  --gradient-text: linear-gradient(to right, var(--primary-color), var(--accent-color));
+  --gradient-btn: #1A73E8;
+  --gradient-text: #1A73E8;
+}
+
+*:focus, *:focus-visible {
+  outline: 4px solid var(--primary-color) !important;
+  outline-offset: 2px !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -27,11 +49,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  /* Subtle animated ambient background */
-  background-image: 
-    radial-gradient(circle at 15% 50%, rgba(74, 144, 226, 0.15), transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(144, 19, 254, 0.15), transparent 25%);
-  background-attachment: fixed;
+  background-image: none; /* Removed confusing background gradients for clarity */
 }
 
 /* Typography */
@@ -54,12 +72,10 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 5%;
-  background: rgba(11, 14, 20, 0.8);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  position: sticky;
-  top: 0;
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
   z-index: 100;
 }
 
@@ -133,25 +149,25 @@ nav {
 }
 
 .btn-primary {
-  background: var(--gradient-btn);
+  background: var(--primary-color);
   color: white;
-  box-shadow: 0 4px 15px rgba(144, 19, 254, 0.4);
+  box-shadow: 0 4px 6px rgba(26, 115, 232, 0.2);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(144, 19, 254, 0.6);
+  box-shadow: 0 6px 12px rgba(26, 115, 232, 0.3);
 }
 
 .btn-secondary {
-  background: transparent;
-  color: var(--text-main);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: #FFFFFF;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--text-main);
+  background: #f8f9fa;
+  border-color: var(--secondary-color);
 }
 
 /* Layout Core */
@@ -221,18 +237,17 @@ main {
 
 .card {
   background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 2rem;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  border-color: rgba(74, 144, 226, 0.5);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .card h3 {
@@ -287,11 +302,10 @@ main {
 footer {
   text-align: center;
   padding: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--border-color);
   color: var(--text-muted);
   font-size: 0.9rem;
-  background: rgba(11, 14, 20, 0.5);
-  backdrop-filter: blur(10px);
+  background: var(--bg-card);
 }
 
 /* Animations */
@@ -317,14 +331,15 @@ footer {
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(11, 14, 20, 0.95);
+    background: #FFFFFF;
     flex-direction: column;
     align-items: center;
     padding: 2rem 0;
     gap: 1.5rem;
     clip-path: circle(0% at top right);
     transition: clip-path 0.4s ease-out;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
   }
   
   .nav-links.active {
@@ -342,4 +357,296 @@ footer {
   .hero p {
     font-size: 1rem;
   }
+}
+
+/* Authentication Forms */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 160px);
+  padding: 2rem 5%;
+}
+
+.auth-card {
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1.5rem 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.divider:not(:empty)::before {
+  margin-right: .5em;
+}
+
+.divider:not(:empty)::after {
+  margin-left: .5em;
+}
+
+.btn-google {
+  background: white;
+  color: #333;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-google:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.auth-links {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.auth-links a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   LIGHT ACCESSIBLE HOMEPAGE THEME
+   (Based on Layout Reference but Light Theme)
+   ========================================= */
+
+.light-accessible-theme {
+    background: #FFFFFF;
+    color: #202124;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.transparent-nav {
+    background: transparent !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    padding: 1.5rem 5% !important;
+}
+
+.transparent-nav .logo-icon {
+    background-color: #1A73E8;
+    color: white;
+}
+
+.transparent-nav .logo span {
+    color: #1A73E8 !important;
+}
+
+.transparent-nav .menu-toggle i {
+    color: #202124 !important;
+}
+
+.center-links a {
+    color: #5F6368 !important;
+    font-weight: 600;
+}
+
+.center-links a:hover, .center-links a.active {
+    color: #1A73E8 !important;
+}
+
+.btn-nav-login {
+    background: white;
+    border: 1px solid #1A73E8;
+    color: #1A73E8;
+    padding: 8px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-nav-login:hover {
+    background: #1A73E8;
+    color: white;
+}
+
+.hero-cinematic {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 5%;
+}
+
+.glass-card {
+    display: flex;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 900px;
+    min-height: 400px;
+    padding: 4rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+    border: 1px solid rgba(255,255,255,1);
+}
+
+.glass-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+}
+
+.glass-left h1 {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    margin-bottom: 1.5rem;
+    color: #111;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.glass-left p {
+    font-size: 1.25rem;
+    color: #444;
+    margin-bottom: 3.5rem;
+    max-width: 550px;
+    line-height: 1.6;
+}
+
+.hero-buttons-stacked {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 450px;
+}
+
+.btn-hollow-blue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: #0D47A1;
+    border: 2px solid #1A73E8; 
+    padding: 16px 30px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(26, 115, 232, 0.1);
+}
+
+.btn-hollow-blue:hover {
+    background: #F0F7FF;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(26, 115, 232, 0.2);
+    border-color: #0D47A1;
+}
+
+.glass-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-isometric-img {
+    max-width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1));
+}
+
+@media (max-width: 900px) {
+    .glass-card {
+        flex-direction: column;
+        padding: 2.5rem;
+    }
+    .glass-left {
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+    .glass-left p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-buttons-stacked {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* =========================================
+   SPA VIEW ROUTING
+   ========================================= */
+.spa-view {
+    display: none;
+}
+
+.spa-view.active-view {
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
