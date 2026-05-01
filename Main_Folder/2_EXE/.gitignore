@@ -1,0 +1,43 @@
+# ── Python ──────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/work/
+*.spec.bak
+
+# ── Virtual environments ─────────────────────────
+venv/
+.venv/
+env/
+.env
+
+# ── PyInstaller output ───────────────────────────
+# Keep dist/caption_output.txt (OBS reads it)
+dist/SignBridgePro/
+dist/*.exe
+build/work/
+
+# ── Model weights (use Git LFS) ──────────────────
+model/*.h5
+model/*.pkl
+model/*.onnx
+model/*.tflite
+
+# ── Logs ─────────────────────────────────────────
+logs/*.log
+logs/*.txt
+
+# ── OS files ─────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE ──────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.user
